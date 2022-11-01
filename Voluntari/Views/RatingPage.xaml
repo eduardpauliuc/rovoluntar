@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Voluntari.Views.RatingPage" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid VerticalOptions="Center" HorizontalOptions="Center"
+              HeightRequest="250" WidthRequest="300">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.ColumnSpan="5" Text="Acordă un scor voluntarului"
+                   VerticalOptions="Center" HorizontalOptions="Center"
+                   FontFamily="{StaticResource SemiBoldFont}"
+                   FontSize="22" />
+
+            <Image x:Name="s1" Grid.Row="1"
+                   Grid.Column="0" Source="stea0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="s2" Grid.Row="1"
+                   Grid.Column="1" Source="stea0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped2" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Image x:Name="s3" Grid.Row="1"
+                   Grid.Column="2" Source="stea0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped3" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="s4" Grid.Row="1"
+                   Grid.Column="3" Source="stea0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped4" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="s5" Grid.Row="1"
+                   Grid.Column="4" Source="stea0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped5" />
+                </Image.GestureRecognizers>
+            </Image>
+
+
+            <Button Grid.Row="2" Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="{StaticResource LightPrimary}"
+                    TextColor="White" WidthRequest="130"
+                    CornerRadius="20" VerticalOptions="Center"
+                    HorizontalOptions="CenterAndExpand" Text="Acordă"
+                    Pressed="Button_Pressed" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

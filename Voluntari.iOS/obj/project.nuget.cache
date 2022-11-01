@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "suaN4IQYoZPBw/kZet0WhvJ+uYPb8LHE+ItTLSP1bXH23pfxi8JTA4ark+5TpA/sj6Dl3bhdwGTOFD2LQO5Qig==",
+  "success": true,
+  "projectFilePath": "C:\\CoDvid\\Voluntari\\Voluntari.iOS\\Voluntari.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pauli\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\pauli\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\pauli\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
+    "C:\\Users\\pauli\\.nuget\\packages\\xamarin.forms\\4.6.0.726\\xamarin.forms.4.6.0.726.nupkg.sha512",
+    "C:\\Users\\pauli\\.nuget\\packages\\xamarin.forms.maps\\4.6.0.726\\xamarin.forms.maps.4.6.0.726.nupkg.sha512",
+    "C:\\Users\\pauli\\.nuget\\packages\\xamarin.forms.pancakeview\\1.4.2\\xamarin.forms.pancakeview.1.4.2.nupkg.sha512"
+  ],
+  "logs": []
+}

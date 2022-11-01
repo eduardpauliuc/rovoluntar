@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application x:Class="Voluntari.App" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2E67B2</Color>
+            <Color x:Key="PrimaryDark">#077070</Color>
+            <Color x:Key="LightPrimary">#33C0CD</Color>
+            <Color x:Key="Secondary">#FCBB79</Color>
+            <Color x:Key="Black">#000000</Color>
+            <Color x:Key="PaleRed">#c98b87</Color>
+            <Color x:Key="PrimaryText">#231F20</Color>
+            <Color x:Key="SecondaryText">#757575</Color>
+            <Color x:Key="BackgroundColor">#FFFFFF</Color>
+
+            <OnPlatform x:Key="MaterialFontFamily" x:TypeArguments="x:String">
+                <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="RegularFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="segoe-regular.ttf#Regular" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="BoldFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="segoe-bold.ttf#Bold" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="LightFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="segoe-light.ttf#Regular" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="BlackFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="segoe-black.ttf#Italic" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="SemiBoldFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="segoe-semibold.ttf#Regular" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="SemiLightFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="segoe-semilight.ttf#Regular" />
+            </OnPlatform>
+
+            <!--  ICONS  -->
+            <x:String x:Key="AddIcon">󰐗</x:String>
+            <x:String x:Key="RefreshIcon">󰁪</x:String>
+            <x:String x:Key="CheckIcon">󰄬</x:String>
+            <x:String x:Key="CheckBoxIcon">󰄲</x:String>
+            <x:String x:Key="CloseIcon">󰅖</x:String>
+            <x:String x:Key="DeleteIcon">󰆴</x:String>
+            <x:String x:Key="CompleteIcon">󰃗</x:String>
+            <x:String x:Key="EditIcon">󰃉</x:String>
+            <x:String x:Key="CloseIconFilled">󰅙</x:String>
+            <x:String x:Key="CloseIconTransparent">󰅚</x:String>
+            <x:String x:Key="SaveIcon">󰆓</x:String>
+            <x:String x:Key="ArrowIcon">󰁆</x:String>
+            <x:String x:Key="Arrow1Icon">󰁆</x:String>
+            <x:String x:Key="Arrow2Icon">󰅀</x:String>
+            <x:String x:Key="ArrowRightIcon">󰅂</x:String>
+            <x:String x:Key="FalseIcon">󰅖</x:String>
+            <x:String x:Key="ExpandIcon">󰁌</x:String>
+            <x:String x:Key="CollapseIcon">󰁄</x:String>
+            <x:String x:Key="CollapseExpandIcon">󰁀</x:String>
+
+            <!--  ELEMENT STYLES  -->
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
+            </Style>
+
+            <Style TargetType="SearchBar">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
+            </Style>
+
+            <Style TargetType="DatePicker">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
+            </Style>
+
+            <Style TargetType="TimePicker">
+                <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryText}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

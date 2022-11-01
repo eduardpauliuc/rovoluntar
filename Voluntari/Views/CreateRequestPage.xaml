@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="Voluntari.Views.CreateRequestPage" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" mc:Ignorable="d">
+
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <Style x:Key="headerStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+            <Setter Property="FontSize" Value="23" />
+        </Style>
+        <Style x:Key="labelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource RegularFont}" />
+            <Setter Property="TextColor" Value="{StaticResource SecondaryText}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TranslationX" Value="25" />
+            <Setter Property="TranslationY" Value="10" />
+            <Setter Property="Margin" Value="0" />
+        </Style>
+        <Style TargetType="StackLayout">
+            <Setter Property="Spacing" Value="0" />
+            <Setter Property="Margin" Value="0,-5" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="{StaticResource SemiBoldFont}" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="{StaticResource SemiBoldFont}" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="BorderColor" Value="LightGray" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="Gray" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Padding" Value="0" />
+        </Style>
+        <Style TargetType="pancakeview:PancakeView">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Elevation" Value="5" />
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="Padding" Value="10,0" />
+            <Setter Property="CornerRadius" Value="13" />
+            <Setter Property="BackgroundColor" Value="White" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0" Spacing="0">
+                <Label Margin="25,0,25,5" Padding="0,0,30,0"
+                       Text="Completează acest formular..."
+                       Style="{StaticResource headerStyle}"
+                       FontSize="33" />
+
+                <StackLayout>
+                    <Label Style="{StaticResource labelStyle}" Text="Titlu" />
+                    <pancakeview:PancakeView>
+                        <Entry Placeholder="Adaugă" Text="{Binding NewRequest.Name}" />
+                    </pancakeview:PancakeView>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Style="{StaticResource labelStyle}" Text="Descriere" />
+                    <pancakeview:PancakeView>
+                        <Editor Placeholder="Adaugă descrierea" AutoSize="TextChanges"
+                                Text="{Binding NewRequest.Description}"
+                                FontFamily="{StaticResource SemiBoldFont}" />
+                    </pancakeview:PancakeView>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Style="{StaticResource labelStyle}" Text="Telefon" />
+                    <pancakeview:PancakeView>
+                        <Entry Placeholder="Număr de telefon" Text="0772121884" />
+                    </pancakeview:PancakeView>
+                </StackLayout>
+
+                <Grid Margin="15" HeightRequest="100">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0"
+                            Text="Medical" Pressed="Button_Pressed">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Skill1}"
+                                         Value="True">
+                                <Setter Property="BorderColor" Value="DarkBlue" />
+                                <Setter Property="TextColor" Value="Black" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Grid.Row="0" Grid.Column="1"
+                            Pressed="Button_Pressed" Text="Gătit">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Skill2}"
+                                         Value="True">
+                                <Setter Property="BorderColor" Value="DarkBlue" />
+                                <Setter Property="TextColor" Value="Black" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Grid.Row="0" Grid.Column="2"
+                            Pressed="Button_Pressed" Text="Construit"
+                            BackgroundColor="White">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Skill3}"
+                                         Value="True">
+                                <Setter Property="BorderColor" Value="DarkBlue" />
+                                <Setter Property="TextColor" Value="Black" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="0"
+                            Pressed="Button_Pressed" Text="Timp liber"
+                            BackgroundColor="White">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Skill4}"
+                                         Value="True">
+                                <Setter Property="BorderColor" Value="DarkBlue" />
+                                <Setter Property="TextColor" Value="Black" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="1"
+                            Pressed="Button_Pressed" Text="Organizator"
+                            BackgroundColor="White">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Skill5}"
+                                         Value="True">
+                                <Setter Property="BorderColor" Value="DarkBlue" />
+                                <Setter Property="TextColor" Value="Black" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="2"
+                            Pressed="Button_Pressed" Text="IT-ist"
+                            BackgroundColor="White">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Skill6}"
+                                         Value="True">
+                                <Setter Property="BorderColor" Value="DarkBlue" />
+                                <Setter Property="TextColor" Value="Black" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Grid.Row="2" Grid.Column="0"
+                            Pressed="Button_Pressed" Text="Profesor"
+                            BackgroundColor="White">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Skill7}"
+                                         Value="True">
+                                <Setter Property="BorderColor" Value="DarkBlue" />
+                                <Setter Property="TextColor" Value="Black" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Grid.Row="2" Grid.Column="1"
+                            Pressed="Button_Pressed" Text="Mașină"
+                            BackgroundColor="White">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Skill8}"
+                                         Value="True">
+                                <Setter Property="BorderColor" Value="DarkBlue" />
+                                <Setter Property="TextColor" Value="Black" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Grid.Row="2" Grid.Column="2"
+                            Pressed="Button_Pressed" Text="Frizer"
+                            BackgroundColor="White">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Skill8}"
+                                         Value="True">
+                                <Setter Property="BorderColor" Value="DarkBlue" />
+                                <Setter Property="TextColor" Value="Black" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+
+
+                </Grid>
+
+                <StackLayout>
+                    <Label Style="{StaticResource labelStyle}" Text="Adresă" />
+                    <pancakeview:PancakeView>
+                        <Entry Placeholder="Adaugă adresă" Text="{Binding NewRequest.Phone}" />
+                    </pancakeview:PancakeView>
+                </StackLayout>
+
+                <Label Style="{StaticResource labelStyle}" Text="Locație" />
+                <pancakeview:PancakeView Padding="5" HeightRequest="300">
+                    <maps:Map x:Name="myMap" IsShowingUser="True"
+                              MapClicked="Map_MapClicked" HasScrollEnabled="False"
+                              HasZoomEnabled="True" />
+                </pancakeview:PancakeView>
+
+                <Button Margin="15" Text="Trimite cere"
+                        Pressed="Save_Clicked" BorderWidth="0"
+                        CornerRadius="10"
+                        BackgroundColor="{StaticResource LightPrimary}"
+                        FontFamily="{StaticResource BoldFont}"
+                        FontSize="15" TextColor="White" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

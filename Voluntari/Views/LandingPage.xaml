@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Voluntari.Views.LandingPage" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="landingPage"
+             mc:Ignorable="d">
+    <ContentPage.Resources>
+        <Style x:Key="headerStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+            <Setter Property="FontSize" Value="23" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="25,0" Spacing="17">
+            <Label Margin="0,0,0,15" Padding="0,0,30,0"
+                   Text="Cu ce am putea să te ajutăm?"
+                   Style="{StaticResource headerStyle}"
+                   FontSize="35" />
+
+            <SearchBar Margin="0" Placeholder="Caută categoria"
+                       HorizontalOptions="FillAndExpand" TranslationX="-15" />
+
+            <Label Margin="10,0" Text="Selectează categoria"
+                   Style="{StaticResource headerStyle}" />
+
+            <CarouselView x:Name="carousel" Margin="-25,0"
+                          FlowDirection="RightToLeft"
+                          ItemsSource="{Binding Categories}"
+                          HorizontalOptions="CenterAndExpand" HeightRequest="200"
+                          TranslationX="0" PeekAreaInsets="137">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Aspect="AspectFit" HorizontalOptions="FillAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference landingPage}, Path=BindingContext.TappedCommand}" CommandParameter="{Binding Template}" />
+                            </Image.GestureRecognizers>
+                            <Image.Source>
+                                <FileImageSource File="{Binding Image}" />
+                            </Image.Source>
+                        </Image>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Label Margin="10,25,10,10" Text="Ai nevoie de ajutor?"
+                   Style="{StaticResource headerStyle}" />
+
+            <Grid Margin="-10,-10,0,0" Padding="0"
+                  RowSpacing="0" HeightRequest="60">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" Margin="7"
+                       TranslationY="-5" Source="video.png" />
+                <Label Grid.Column="1" Margin="0,0,0,-8"
+                       VerticalOptions="End" Text="Demonstratie Video"
+                       FontSize="15" />
+                <Label Grid.Row="1" Grid.Column="1"
+                       Margin="0,-5,0,0" VerticalOptions="Center"
+                       FontFamily="{StaticResource BoldFont}"
+                       Text="Ghid de utilizare" />
+            </Grid>
+
+            <Grid Margin="-10,-5,0,0" Padding="0"
+                  RowSpacing="0" HeightRequest="60">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" Margin="7"
+                       TranslationY="-5" Source="mail.png" />
+                <Label Grid.Column="1" Margin="0,0,0,-8"
+                       VerticalOptions="End" Text="Informatii Contact"
+                       FontSize="15" />
+                <Label Grid.Row="1" Grid.Column="1"
+                       Margin="0,-5,0,0" VerticalOptions="Center"
+                       FontFamily="{StaticResource BoldFont}"
+                       Text="Comunicati cu echipa VPR" />
+            </Grid>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
